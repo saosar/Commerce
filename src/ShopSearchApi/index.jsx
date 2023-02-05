@@ -11,9 +11,9 @@ function ShopSearchApi(props) {
         <ul>
       {info.map(item => (
         <li key={item._id}>
-          <p> Producto: {item.name}</p>  
+          {/* <p> Producto: {item.name}</p>  
           <p> Precio: {item.price} </p> 
-          <p> Unidades disponibles: {item.availableUnits} </p> 
+          <p> Unidades disponibles: {item.availableUnits} </p>  */}
         </li>
       ))}
     </ul>
