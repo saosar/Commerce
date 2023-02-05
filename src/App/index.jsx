@@ -13,3 +13,4 @@ function App() {
 
 export default App;
 
+// ESTE .js SE CONECTA DIRECTAMENTE CON EL index.js principal del proyecto

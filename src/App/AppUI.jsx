@@ -4,10 +4,9 @@ import { ShopContext } from '../ShopContext';
 import { ShopSearch } from '../ShopSearch';
 import { Modal } from '../Modal';
 import { CreateShopButton } from '../CreateShopButton';
-
-// ELECTIVAS 
 import { ShopList } from '../ShopList';
 import { ShopForm } from '../ShopForm';
+
 
 function AppUI() {
   const {
@@ -21,6 +20,7 @@ function AppUI() {
     <React.Fragment>
            
       <ShopSearch />
+     
       
         {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
           

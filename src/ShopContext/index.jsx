@@ -1,4 +1,5 @@
 import React from 'react';
+import { getApiData } from '../GetData';
 // import { useLocalStorage } from './useLocalStorage';
 
 // Al crear el contexto también podemos pasarle un valor inicial entre los paréntesis
@@ -10,8 +11,6 @@ function ShopProvider(props) {
   const [searchValue, setSearchValue] = React.useState('');    //BARRA DE SEARCH
 
   const[openModal,setOpenModal] = React.useState(false);
-
-  
   
   // Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
   return (
@@ -22,6 +21,8 @@ function ShopProvider(props) {
 
       openModal,
       setOpenModal,
+
+      getApiData,
       
     }}>
       {props.children}
