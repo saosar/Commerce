@@ -11,6 +11,14 @@ function ShopProvider(props) {
   const [searchValue, setSearchValue] = React.useState('');    //BARRA DE SEARCH
 
   const[openModal,setOpenModal] = React.useState(false);
+
+
+  ///BORRAR?????????
+  const [data, setData] = React.useState([]);    //VIENE DE getApiData
+  const fetchData = async () => {
+    const apiData = await getApiData();
+    setData(apiData);
+  };
   
   // Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
   return (
@@ -22,8 +30,8 @@ function ShopProvider(props) {
       openModal,
       setOpenModal,
 
-      getApiData,
-      
+      data, 
+      fetchData 
     }}>
       {props.children}
     </ShopContext.Provider>

@@ -1,32 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 import { getApiData } from '../GetData';
 
 function ShopSearch() {
   // PARA GUARDAR EN UN ESTADO LOS VALORES DE LA API
-  const [info,setInfo] = React.useState({
-    cityFrom: "",
-    cityTo: "",
-    date: "",
-    passengers: ""
-  })
-  React.useEffect(()=>{
-    const data = async () => {
-      const info = await getApiData()
-      setInfo(info)
-    }
-    data()
-    .catch((err) => {
-      console.log(err.message);
-   });
-  },[]) 
-  // function handleInputChange(e) {
-  //   setInput({
-  //     ...input,
-  //     [e.target.name]: e.target.value
-  //   })
-  // }
+  const { data, fetchData } = useContext(ShopContext);
+  return (
+    <div>
+    <button onClick={fetchData}>Get API Data</button>
+    <ul>
+      {data.map(item => (
+        <li key={item.id}>{item.name}</li>
+      ))}
+    </ul>
+  </div>
+
+  )
 
 
 
@@ -38,6 +28,7 @@ function ShopSearch() {
   };
 
   return (
+   
     <input 
       className="ShopSearch" 
       placeholder="Buscar producto"

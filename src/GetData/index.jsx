@@ -3,12 +3,13 @@
 // const {} = React.useContext(ShopContext);
 
 const getApiData = async() =>{
-
-    const url = "https://products-api-production-6137.up.railway.app/api/products"
-    const data =  await fetch(url)
-    .then (res =>res.json())
-    .then(data =>data)
-    return (data);
-}
+    try {
+        const response = await fetch ("https://products-api-production-6137.up.railway.app/api/products");
+        const data =  await response.json();
+        return (data);
+    } catch (error){
+        console.error(error);
+    }
+};
 
 export { getApiData };
