@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoContext } from '../TodoContext';
+import { ShopContext } from '../ShopContext';
 import './TodoForm.css';
 
 function TodoForm() {
@@ -9,7 +9,7 @@ function TodoForm() {
   const {
     addTodo,
     setOpenModal,
-  } = React.useContext(TodoContext);
+  } = React.useContext(ShopContext);
   
   // Creamos una función para actualizar el estado de nuestro nuevo TODO
   const onChange = (event) => {

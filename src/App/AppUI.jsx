@@ -1,6 +1,6 @@
 import React from 'react';
 // Importamos nuestro contexto
-import { TodoContext } from '../TodoContext';
+import { ShopContext } from '../ShopContext';
 import { TodoSearch } from '../TodoSearch';
 import { Modal } from '../Modal';
 
@@ -8,6 +8,7 @@ import { Modal } from '../Modal';
 // ELECTIVAS 
 import { TodoList } from '../TodoList';
 import { TodoForm } from '../TodoForm';
+import { CreateShopButton } from '../CreateShopButton';
 
 function AppUI() {
   const {
@@ -15,7 +16,8 @@ function AppUI() {
     loading,
     searchedTodos,
     openModal,
-  } = React.useContext(TodoContext);
+    setOpenModal
+  } = React.useContext(ShopContext);
 
   return (
   
@@ -38,7 +40,9 @@ function AppUI() {
               <TodoForm/>
             </Modal>
           )}
-          
+           <CreateShopButton
+        setOpenModal={setOpenModal}
+      />
       {/* <Scroller></Scroller> */}
     </React.Fragment>
     

@@ -1,9 +1,9 @@
 import React from 'react';
 import './TodoSearch.css';
-import { TodoContext } from '../TodoContext';
+import { ShopContext } from '../ShopContext';
 
 function TodoSearch() {
-  const {searchValue, setSearchValue} = React.useContext(TodoContext);
+  const {searchValue, setSearchValue} = React.useContext(ShopContext);
   const onSearchValueChange = (event) => {  /* fn que permite que llame actualizar esgtado*/ 
     console.log(event.target.value); /*busca en consola donde esta el valor y pongo con punto*/
     setSearchValue(event.target.value);
