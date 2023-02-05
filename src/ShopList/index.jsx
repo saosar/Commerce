@@ -1,7 +1,7 @@
 import React from 'react';
-import './TodoList.css'
+import './ShopList.css'
 
-function TodoList(props) {
+function ShopList(props) {
   return (
     <section>
       <ul>
@@ -11,4 +11,4 @@ function TodoList(props) {
   );
 }
 
-export { TodoList };
+export { ShopList };

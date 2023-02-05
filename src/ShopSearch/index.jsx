@@ -1,8 +1,8 @@
 import React from 'react';
-import './TodoSearch.css';
+import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 
-function TodoSearch() {
+function ShopSearch() {
   const {searchValue, setSearchValue} = React.useContext(ShopContext);
   const onSearchValueChange = (event) => {  /* fn que permite que llame actualizar esgtado*/ 
     console.log(event.target.value); /*busca en consola donde esta el valor y pongo con punto*/
@@ -11,12 +11,12 @@ function TodoSearch() {
 
   return (
     <input 
-      className="TodoSearch" 
-      placeholder="Buscar palabra clave"
+      className="ShopSearch" 
+      placeholder="Buscar producto"
       value={searchValue} 
       onChange={onSearchValueChange}  /* cuando input cambie ejecuta funcion*/
     />
   );
 }
 
-export { TodoSearch };
+export { ShopSearch };

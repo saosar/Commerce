@@ -47,7 +47,7 @@ form { /*fondo*/
     
   }
   
-  .TodoForm-buttonContainer {
+  .ShopForm-buttonContainer {
     margin-top: 14px;
     display: flex;
     justify-content: space-between;
@@ -57,7 +57,7 @@ form { /*fondo*/
   }
   
   /* Cancelar y Añadir*/
-  .TodoForm-button {
+  .ShopForm-button {
     cursor: pointer;
     display: inline-block;
     font-size: 20px;
@@ -72,12 +72,12 @@ form { /*fondo*/
     
   }
   
-  .TodoForm-button--add {
+  .ShopForm-button--add {
     background: #61d9fad2;
     box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
     border-radius: 50px
   }
   
-  .TodoForm-button--cancel {
+  .ShopForm-button--cancel {
     background: transparent;
   }

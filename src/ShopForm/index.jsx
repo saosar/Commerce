@@ -1,19 +1,18 @@
 import React from 'react';
 import { ShopContext } from '../ShopContext';
-import './TodoForm.css';
+import './ShopForm.css';
 
-function TodoForm() {
+function ShopForm() {
   // Creamos un estado para nuestro nuevo TODO
-  const [newTodoValue, setNewTodoValue] = React.useState('');
-  // Desestructuramos las funciones que necesitamos para añadir un TODO y cerrar nuestro modal
+  const [newShopValue, setNewShopValue] = React.useState('');
+  // Desestructuramos las funciones que necesitamos para añadir una compra y cerrar nuestro modal
   const {
-    addTodo,
     setOpenModal,
   } = React.useContext(ShopContext);
   
-  // Creamos una función para actualizar el estado de nuestro nuevo TODO
+  // Creamos una función para actualizar el estado de la nueva compra
   const onChange = (event) => {
-    setNewTodoValue(event.target.value);
+    setNewShopValue(event.target.value);
   };
   
   // Función para cerrar el modal luego de añadir
@@ -21,43 +20,48 @@ function TodoForm() {
     setOpenModal(false);
   };
   
-  // Función para agregar nuestro nuevo TODO
+  // Función para agregar nueva COMPRA
   const onSubmit = (event) => {
     // prevent default para evitar recargar la página
     event.preventDefault();
-    // Utilizamos nuestra función para añadir nuestro TODO
-    addTodo(newTodoValue);
+    
     // Cerramos nustro modal
     setOpenModal(false);
     // También estaría bien resetear nuestro formulario
-    setNewTodoValue('')
+    setNewShopValue('')
   };
 
   return (
     <form onSubmit={onSubmit}>
-      <label>Escribe una nueva Tarea</label>
+      <label>Realiza una nueva compra</label>
+
+      {/* CAMBIAR POR EL PRODUCTO SELECCIONADO POR EL CLIENTE EN CARRITO */}
       <textarea
-        value={newTodoValue}
+        value={newShopValue}
         onChange={onChange}
-        placeholder="Ejemplo: Realizar un curso de..."
+        placeholder="PRODUCTO A COMPRAR"
       />
-      <div className="TodoForm-buttonContainer">
+
+
+      <div className="ShopForm-buttonContainer">
         <button
           type="button"
-          className="TodoForm-button TodoForm-button--cancel"
+          className="ShopForm-button ShopForm-button--cancel"
           onClick={onCancel}
           >
-          Cancelar
+          Cancelar compra
         </button>
+
+
         <button
           type="submit"
-          className="TodoForm-button TodoForm-button--add"
+          className="ShopForm-button ShopForm-button--add"
         >
-          Añadir
+          Pagar $
         </button>
       </div>
     </form>
   );
 }
 
-export { TodoForm };
+export { ShopForm };

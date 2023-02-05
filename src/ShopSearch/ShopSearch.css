@@ -1,4 +1,4 @@
-.TodoSearch {
+.ShopSearch {
     background: #F9FBFC;
     border-radius: 20px;
     border: 2px solid #bf71d9;
@@ -16,12 +16,12 @@
     box-shadow: 0px 5px 50px rgba(210, 110, 192, 0.25); /* sombra externa*/
   }
   
-  .TodoSearch::placeholder {
+  .ShopSearch::placeholder {
     color: #ce42c2;
     font-family: 'Montserrat';
     font-weight: 400;
   }
   
-  .TodoSearch:focus {
+  .ShopSearch:focus {
     outline-color: #61DAFA;
   }

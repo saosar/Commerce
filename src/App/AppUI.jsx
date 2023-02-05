@@ -1,20 +1,17 @@
 import React from 'react';
 // Importamos nuestro contexto
 import { ShopContext } from '../ShopContext';
-import { TodoSearch } from '../TodoSearch';
+import { ShopSearch } from '../ShopSearch';
 import { Modal } from '../Modal';
-
+import { CreateShopButton } from '../CreateShopButton';
 
 // ELECTIVAS 
-import { TodoList } from '../TodoList';
-import { TodoForm } from '../TodoForm';
-import { CreateShopButton } from '../CreateShopButton';
+import { ShopList } from '../ShopList';
+import { ShopForm } from '../ShopForm';
 
 function AppUI() {
   const {
-    error,
-    loading,
-    searchedTodos,
+
     openModal,
     setOpenModal
   } = React.useContext(ShopContext);
@@ -23,23 +20,20 @@ function AppUI() {
   
     <React.Fragment>
            
-      <TodoSearch />
+      <ShopSearch />
       
         {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
           
-          <TodoList>
-            {error && <p>Desespérate, hubo un error...</p>}            
-            {loading && <p>Estamos cargando, no desesperes...</p>}
-            {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
-            
-    
-          </TodoList>   
+          {/* PROBABLE CAMBIO PARA INGRESO DE LA INFO DE LA API */}
+          <ShopList /> 
 
           {!!openModal && (
             <Modal>
-              <TodoForm/>
+              <ShopForm/>
             </Modal>
           )}
+
+          {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
            <CreateShopButton
         setOpenModal={setOpenModal}
       />
