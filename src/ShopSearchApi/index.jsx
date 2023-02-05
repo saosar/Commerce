@@ -4,13 +4,8 @@ import { ShopContext } from '../ShopContext';
 
 function ShopSearchApi(props) {
   // PARA GUARDAR EN UN ESTADO LOS VALORES DE LA API  ////api
-  const { info, CreateShopButton } = React.useContext(ShopContext);
+  const { info } = React.useContext(ShopContext);
 
-
-  //// CREAR EL BOTON DE COMPRAR
-  const onClickButton = () => {
-    props.setOpenModal(prevState => !prevState);  // se abra y se cierre al dar click al boton //true abre
-  };
   return (
      <div>
         <ul>
@@ -22,18 +17,10 @@ function ShopSearchApi(props) {
         </li>
       ))}
     </ul>
-
-    
-
    </div>
-    <button
-      className="CreateShopButton"
-      onClick={onClickButton}
-    >
-      Purchase!
-    </button>
+
 
   );
 
-
+ }
 export { ShopSearchApi }

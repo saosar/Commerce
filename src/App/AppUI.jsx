@@ -23,7 +23,9 @@ function AppUI() {
       </ShopSearch> 
 
       <ShopSearchApi>
+        <CreateShopButton
         setOpenModal={setOpenModal}
+        />
       </ShopSearchApi>
      
       
