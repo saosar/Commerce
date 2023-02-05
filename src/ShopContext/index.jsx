@@ -1,13 +1,14 @@
 import React from 'react';
 import { getApiData } from '../GetData'; ////api
+// import { CreateShopButton } from '../CreateShopButton';
 // import { useLocalStorage } from './useLocalStorage';
 
 // Al crear el contexto también podemos pasarle un valor inicial entre los paréntesis
 const ShopContext = React.createContext();
 
 function ShopProvider(props) {
+
   // Nos traemos todo el estado y las funciones de nuestra aplicación que queremos globales
-  
   const [searchValue, setSearchValue] = React.useState('');    //BARRA DE SEARCH
 
   const[openModal,setOpenModal] = React.useState(false);
@@ -36,6 +37,8 @@ function ShopProvider(props) {
 
       info,       ////QUEDA GUARDADA TODA LA INFO DE LA API. ES LA VARIABLE API VRGA
       // fetchData 
+      
+
     }}>
       {props.children}
     </ShopContext.Provider>
