@@ -1,20 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './ShopSearchApi.css';
 import { ShopContext } from '../ShopContext';
 
 function ShopSearchApi() {
   // PARA GUARDAR EN UN ESTADO LOS VALORES DE LA API  ////api
-  const { data, fetchData } = useContext(ShopContext);
+  const { info } = React.useContext(ShopContext);
   return (
     <div>
-    <button onClick={fetchData}>Get API Data</button>
-    <ul>
-      {data.map(item => (
-        <li key={item.id}>{item.name}</li>
+        <ul>
+      {info.map(item => (
+        <li key={item._id}>{item.name}</li>
       ))}
     </ul>
+    
   </div>
-
   )
 };
 

@@ -14,11 +14,15 @@ function ShopProvider(props) {
 
 
   ///ACTUALIZA EL ESTADO DE data que viene de getData para guardar la API y usar en shopsearchapi  ////api
-  const [data, setData] = React.useState([]);    //VIENE DE getApiData
-  const fetchData = async () => {
-    const apiData = await getApiData();
-    setData(apiData);
-  };
+  const [info, setInfo] = React.useState([]);    //VIENE DE getApiData
+  React.useEffect(() => {      //MUESTRE EN PANTALLA LA INFODE LAS API (que configura en shopsearchapi)
+    const data = async () => {
+      const info = await getApiData();
+      setInfo(info);
+    };
+    data();
+  }, []);
+
   
   // Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
   return (
@@ -30,8 +34,8 @@ function ShopProvider(props) {
       openModal,
       setOpenModal,
 
-      data,       ////api
-      fetchData 
+      info,       ////QUEDA GUARDADA TODA LA INFO DE LA API. ES LA VARIABLE API VRGA
+      // fetchData 
     }}>
       {props.children}
     </ShopContext.Provider>

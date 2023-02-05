@@ -3,23 +3,53 @@ import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 
 function ShopSearch() {
- // PARA GUARDAR DE MANERA LOCAL LO QUE ESCRIBIO EL USUARIO   ///USUARIO
+ // PARA GUARDAR DE MANERA LOCAL LO QUE ESCRIBIO EL USUARIO   ///USUARIO  //INPUT CHANGE
   const {searchValue, setSearchValue} = React.useContext(ShopContext);
   const onSearchValueChange = (event) => {  /* fn que permite que llame actualizar esgtado*/ 
     console.log(event.target.value); /*busca en consola donde esta el valor y pongo con punto*/
     setSearchValue(event.target.value);
   };
 
+//////////////////////////////////////////////-------------------------------
+  const [input, setInput] = React.useState({
+    name: "",
+    description: "",
+    category: "",
+    price: "",
+    availableUnits: ""
+  });
+
+/////////BORRAR??????????
+  // useEffect(() => {
+  //   setSearchValue(data)
+  //   setData(data)
+  // }, [data])
+
+/////////// PARA LA BARRA DE BUSQUEDA 
+  // const onSearchBar = (event) {
+  //   const result = searchFligths(data, setData)
+  //   setSearchValue(result)
+  //   setData(result)
+  //   setInput({
+  //     name: "",
+  //     description: "",
+  //     category: "",
+  //     price: "",
+  //     availableUnits: ""
+  //   })
+  // };
+///////////////////////////////////-----------------
+
   return (
-   
     <input 
       className="ShopSearch" 
       placeholder="Buscar producto"
       // info={info}
       value={searchValue} 
       onChange={onSearchValueChange}  /* cuando input cambie ejecuta funcion*/
-
     />
+
+
   );
 }
 
