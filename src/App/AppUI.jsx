@@ -23,9 +23,7 @@ function AppUI() {
       </ShopSearch> 
 
       <ShopSearchApi>
-        <CreateShopButton
-        setOpenModal={setOpenModal}
-        />
+        
       </ShopSearchApi>
      
       
@@ -41,7 +39,9 @@ function AppUI() {
           )}
 
           {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
-          
+      <CreateShopButton
+        setOpenModal={setOpenModal}
+        />
       {/* <Scroller></Scroller> */}
     </React.Fragment>
     
