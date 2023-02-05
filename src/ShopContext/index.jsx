@@ -1,5 +1,5 @@
 import React from 'react';
-import { getApiData } from '../GetData';
+import { getApiData } from '../GetData'; ////api
 // import { useLocalStorage } from './useLocalStorage';
 
 // Al crear el contexto también podemos pasarle un valor inicial entre los paréntesis
@@ -13,7 +13,7 @@ function ShopProvider(props) {
   const[openModal,setOpenModal] = React.useState(false);
 
 
-  ///BORRAR?????????
+  ///ACTUALIZA EL ESTADO DE data que viene de getData para guardar la API y usar en shopsearchapi  ////api
   const [data, setData] = React.useState([]);    //VIENE DE getApiData
   const fetchData = async () => {
     const apiData = await getApiData();
@@ -30,7 +30,7 @@ function ShopProvider(props) {
       openModal,
       setOpenModal,
 
-      data, 
+      data,       ////api
       fetchData 
     }}>
       {props.children}
