@@ -11,19 +11,6 @@ function ShopSearch() {
   };
   const filteredInfo = info.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase().trim()));
 
-//FILTRA POR PRECIO 
-  const {priceRange, setPriceRange} = React.useContext(ShopContext)
-  React.useState({ min: 0, max: Infinity });
-  const filteredInfoPrice = info.filter(
-    item => item.price >= priceRange.min && item.price <= priceRange.max
-  );
-  const onPriceRangeChange = event => {
-    const { min, max } = event.target.value;
-    setPriceRange({ min, max });
-  };
-  
-
-
 
   ////BORRAR LA BARRA BUSQUEDA
   const handleClear = () => {
@@ -41,31 +28,6 @@ function ShopSearch() {
       onChange={handleSearch}  /* cuando input cambie ejecuta funcion*/
     />
     <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
-
-{/* FILTRAR LA INFO POR PRECIO*/}
-    <div>
-        <label>
-          Filtrar por precio
-          <input
-            type="range"
-            min={0}
-            max={1500}
-            value={priceRange}
-            onChange={onPriceRangeChange}
-          />
-        </label>
-    </div>
-    <ul>
-        {filteredInfoPrice.map(item => (
-          <li key={item._id}>
-            {/* <p>Nombre del producto: {item.name}</p>
-            <p>Precio: {item.price}</p>
-            <p>Unidades disponibles: {item.availableUnits}</p> */}
-          </li>
-        ))}
-      </ul>
-
-{/* FILTRAR LA INFO POR PRODUCTO */}
     <ul>
       {filteredInfo.map((item) => (
             <li key={item._id}>

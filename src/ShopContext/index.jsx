@@ -10,7 +10,7 @@ function ShopProvider(props) {
 
   // Nos traemos todo el estado y las funciones de nuestra aplicación que queremos globales
   const [searchValue, setSearchValue] = React.useState('');    //BARRA DE SEARCH
-  const [priceRange, setPriceRange] = React.useState('');    //BARRA DE SEARCH por PRICE
+  // const [priceRange, setPriceRange] = React.useState({ min: 0, max: Infinity });    //BARRA DE SEARCH por PRICE
 
   const[openModal,setOpenModal] = React.useState(false);
 
@@ -25,15 +25,15 @@ function ShopProvider(props) {
     data();
   }, []);
 
-  
+  // const [data, setData] = React.useState([]); 
   // Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
   return (
     <ShopContext.Provider value={{
      
       searchValue,      //BARRA DE SEARCH
       setSearchValue,   //BARRA DE SEARCH
-      priceRange,   //BARRA SEARCH PRICE
-      setPriceRange, //BARRA SEARCH PRICE
+      // priceRange,   //BARRA SEARCH PRICE
+      // setPriceRange, //BARRA SEARCH PRICE
 
       openModal,
       setOpenModal,
@@ -41,6 +41,8 @@ function ShopProvider(props) {
       info,       ////QUEDA GUARDADA TODA LA INFO DE LA API. ES LA VARIABLE API VRGA
       // fetchData 
       
+      // data, 
+      // setData,
 
     }}>
       {props.children}
