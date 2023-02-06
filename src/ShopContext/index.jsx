@@ -10,6 +10,7 @@ function ShopProvider(props) {
 
   // Nos traemos todo el estado y las funciones de nuestra aplicación que queremos globales
   const [searchValue, setSearchValue] = React.useState('');    //BARRA DE SEARCH
+  const [priceRange, setPriceRange] = React.useState('');    //BARRA DE SEARCH por PRICE
 
   const[openModal,setOpenModal] = React.useState(false);
 
@@ -31,6 +32,8 @@ function ShopProvider(props) {
      
       searchValue,      //BARRA DE SEARCH
       setSearchValue,   //BARRA DE SEARCH
+      priceRange,   //BARRA SEARCH PRICE
+      setPriceRange, //BARRA SEARCH PRICE
 
       openModal,
       setOpenModal,

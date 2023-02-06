@@ -6,7 +6,7 @@ import { Modal } from '../Modal';
 import { CreateShopButton } from '../CreateShopButton';
 import { ShopList } from '../ShopList';
 import { ShopForm } from '../ShopForm';
-import { ShopSearchApi } from '../ShopSearchApi';
+// import { ShopSearchApi } from '../ShopSearchApi';
 
 function AppUI() {
   const {
@@ -22,9 +22,7 @@ function AppUI() {
       <ShopSearch> 
       </ShopSearch> 
 
-      <ShopSearchApi>
-        
-      </ShopSearchApi>
+      {/* <ShopSearchApi/>*/}
      
       
         {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
