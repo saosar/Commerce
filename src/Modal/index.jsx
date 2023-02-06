@@ -9,7 +9,7 @@ function Modal({ children }) {
     <div className="ModalBackground">
       {children}
     </div>,
-    document.getElementById('modal')
+    document.getElementById('modal') //HASTA QUE NO SE DE CLICK,, NO SE MUESTRE
   );
 }
 

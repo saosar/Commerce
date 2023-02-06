@@ -11,7 +11,6 @@ function ShopSearch() {
   };
   const filteredInfo = info.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase().trim()));
 
-
   ////BORRAR LA BARRA BUSQUEDA
   const handleClear = () => {
     setSearchValue("");
@@ -27,7 +26,11 @@ function ShopSearch() {
       value={searchValue} 
       onChange={handleSearch}  /* cuando input cambie ejecuta funcion*/
     />
+    
     <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
+
+    {/* SOLO MUESTRO LA API SI ESCRIBEN ALGO, VACIO NO */}
+    {searchValue.length > 0 && (
     <ul>
       {filteredInfo.map((item) => (
             <li key={item._id}>
@@ -38,9 +41,8 @@ function ShopSearch() {
             </li>
           ))}
     </ul>
-
+    )}
     </div>
-
   );
 }
 
