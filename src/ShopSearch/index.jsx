@@ -26,11 +26,11 @@ function ShopSearch() {
   const filteredInfo = info.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase().trim()));
 
   ////BORRAR LA BARRA BUSQUEDA
-  // const handleClear = () => {
-  //   setSearchValue("");
-  //   setShowResults(false);   // se despresiona boton
-  // };
-  // <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
+  const handleClear = () => {
+    setSearchValue("");
+    setShowResults(false);   // se despresiona boton
+  };
+  
 
 
   //// FILTRAR EL RESULTADO DE MENOR A MAYOR Y MAYOR A MENOR PRECIO
@@ -74,9 +74,21 @@ function ShopSearch() {
       value={searchValue} 
       onChange={handleSearch}  /* cuando input cambie ejecuta funcion*/
     />
+    <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
 
     <button className={'Search'} onClick={handleSubmit}>Buscar</button>
+
+
+     {/* PARA FILTRO LUEGO DE BUSQUEDA */}
+     <select value={sortType} onChange={e => handleSort(e.target.value)}>
+      <option value="none">Sin filtro</option>
+      <option value="asc">Menor a mayor precio</option>
+      <option value="desc">Mayor a menor precio</option>
+    </select>
     
+
+
+      {/* MUESTRA RESULTADOS AL ESCRIBIR Y DAR CLICK */}
     { showResults && searchValue.length > 0 && (
       <div>
         {filteredInfo.length >0 ?(
@@ -98,12 +110,28 @@ function ShopSearch() {
       </div>
     )}
 
-     {/* PARA FILTRO LUEGO DE BUSQUEDA */}
-     <select value={sortType} onChange={e => handleSort(e.target.value)}>
-      <option value="none">Sin filtro</option>
-      <option value="asc">Menor a mayor precio</option>
-      <option value="desc">Mayor a menor precio</option>
-    </select>
+          {/* MUESTRA RESULTADOS AL DAR CLICK SIN ESCRIBIR */}
+    { showResults > 0 && (
+      <div>
+        {filteredInfo.length >0 ?(
+          <ul>
+          {sortedInfo.map((item) => (
+            <li key={item._id}>
+              <p> Producto: {item.name} 
+              <br/> Precio USD: {item.price}  
+              <br/> Unidades disponibles: {item.availableUnits} </p>
+              {/* <button onClick={addToCart}>Cart</button> */}
+          
+            </li>
+          ))}
+          </ul>
+          
+        ) : (
+          <p>No se encontraron resultados</p>
+        )}
+      </div>
+    )}
+
 
     </div>
   )
