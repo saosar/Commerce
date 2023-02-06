@@ -3,24 +3,34 @@ import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 
 //PARA EL CARRITO 
-import { ActionTypes } from '@mui/base';
+// import { ActionTypes } from '@mui/base';
 // import reducer from '../Cart/reducer'
 
 function ShopSearch() {
   const { info } = React.useContext(ShopContext);    ///API
   const {searchValue, setSearchValue} = React.useContext(ShopContext);   //USUARIO
   const [sortType, setSortType] = React.useState('none');  ///CREA ESTADO PARA FILTRAR INFO 
+  const [showResults, setShowResults] = React.useState(false);
+  
 
   //PARA FILTRAR LA INFO DEACUERDO AL "name" de LA API // PARA GUARDAR DE MANERA LOCAL LO QUE ESCRIBIO EL USUARIO   ///USUARIO  //INPUT CHANGE
   const handleSearch = (event) => {  /* USUARIO fn que permite que llame actualizar esgtado*/ 
     setSearchValue(event.target.value);
   };
+ 
+  ////////////solo al oprimir boton 
+  const handleSubmit = () => {
+  setShowResults(true);
+  }
+
   const filteredInfo = info.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase().trim()));
 
   ////BORRAR LA BARRA BUSQUEDA
-  const handleClear = () => {
-    setSearchValue("");
-  };
+  // const handleClear = () => {
+  //   setSearchValue("");
+  //   setShowResults(false);   // se despresiona boton
+  // };
+  // <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
 
 
   //// FILTRAR EL RESULTADO DE MENOR A MAYOR Y MAYOR A MENOR PRECIO
@@ -34,6 +44,8 @@ function ShopSearch() {
   } else if (sortType === 'desc') {
     sortedInfo = filteredInfo.sort((a, b) => b.price - a.price);
   }
+
+
 //////----------
 
   /// AÑADIR AL CARRITO
@@ -62,17 +74,10 @@ function ShopSearch() {
       value={searchValue} 
       onChange={handleSearch}  /* cuando input cambie ejecuta funcion*/
     />
-    
-    <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
 
-    {/* PARA FILTRO LUEGO DE BUSQUEDA */}
-    <select value={sortType} onChange={e => handleSort(e.target.value)}>
-      <option value="none">Sin filtro</option>
-      <option value="asc">Menor a mayor precio</option>
-      <option value="desc">Mayor a menor precio</option>
-    </select>
+    <button className={'Search'} onClick={handleSubmit}>Buscar</button>
     
-    {searchValue.length > 0 && (
+    { showResults && searchValue.length > 0 && (
       <div>
         {filteredInfo.length >0 ?(
           <ul>
@@ -82,14 +87,23 @@ function ShopSearch() {
               <br/> Precio USD: {item.price}  
               <br/> Unidades disponibles: {item.availableUnits} </p>
               {/* <button onClick={addToCart}>Cart</button> */}
+          
             </li>
           ))}
           </ul>
+          
         ) : (
           <p>No se encontraron resultados</p>
         )}
       </div>
     )}
+
+     {/* PARA FILTRO LUEGO DE BUSQUEDA */}
+     <select value={sortType} onChange={e => handleSort(e.target.value)}>
+      <option value="none">Sin filtro</option>
+      <option value="asc">Menor a mayor precio</option>
+      <option value="desc">Mayor a menor precio</option>
+    </select>
 
     </div>
   )

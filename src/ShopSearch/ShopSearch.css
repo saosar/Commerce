@@ -25,3 +25,9 @@
   .ShopSearch:focus {
     outline-color: #61DAFA;
   }
+
+.Search {
+  color: rgb(139, 30, 112);
+  background-color: rgba(201, 22, 132, 0.212);
+  border: 2px solid #bf71d9;
+}

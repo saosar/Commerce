@@ -48,16 +48,28 @@ function ShopSearchPrice() {
 
       <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA - VUELVE ESTADO INICIAL*/}
 
-      <ul>
-        {filteredInfo.map(item => (
-          <li key={item._id}>
+      
+      {minPrice.length > 0  &&  maxPrice.length > 0 && (
+      <div>
+        {filteredInfo.length >0 ?(
+          <ul>
+          {filteredInfo.map((item) => (
+            <li key={item._id}>
+              <p> Producto: {item.name} 
+              <br/> Precio USD: {item.price}  
+              <br/> Unidades disponibles: {item.availableUnits} </p>
+              {/* <button onClick={addToCart}>Cart</button> */}
+          
+            </li>
+          ))}
+          </ul>
+          
+        ) : (
+          <p>No se encontraron resultados</p>
+        )}
+      </div>
+    )}
 
-            <p> Producto: {item.name} 
-            <br/> Precio USD: {item.price}</p>
-            
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };
