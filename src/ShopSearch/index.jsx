@@ -5,7 +5,9 @@ import { ShopContext } from '../ShopContext';
 function ShopSearch() {
   const { info } = React.useContext(ShopContext);    ///API
   const {searchValue, setSearchValue} = React.useContext(ShopContext);   //USUARIO
-//PARA FILTRAR LA INFO DEACUERDO AL "name" de LA API // PARA GUARDAR DE MANERA LOCAL LO QUE ESCRIBIO EL USUARIO   ///USUARIO  //INPUT CHANGE
+  const [sortType, setSortType] = React.useState('none');  ///CREA ESTADO PARA FILTRAR INFO 
+
+  //PARA FILTRAR LA INFO DEACUERDO AL "name" de LA API // PARA GUARDAR DE MANERA LOCAL LO QUE ESCRIBIO EL USUARIO   ///USUARIO  //INPUT CHANGE
   const handleSearch = (event) => {  /* USUARIO fn que permite que llame actualizar esgtado*/ 
     setSearchValue(event.target.value);
   };
@@ -15,6 +17,21 @@ function ShopSearch() {
   const handleClear = () => {
     setSearchValue("");
   };
+
+
+  //// FILTRAR EL RESULTADO DE MENOR A MAYOR Y MAYOR A MENOR PRECIO
+  const handleSort = (sortType) => {
+    setSortType(sortType);
+  };
+
+  let sortedInfo = filteredInfo;
+  if (sortType === 'asc') {
+    sortedInfo = filteredInfo.sort((a, b) => a.price - b.price);
+  } else if (sortType === 'desc') {
+    sortedInfo = filteredInfo.sort((a, b) => b.price - a.price);
+  }
+//////----------
+
 
   return (
     <div>
@@ -29,20 +46,27 @@ function ShopSearch() {
     
     <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA*/}
 
-    {/* SOLO MUESTRO LA API SI ESCRIBEN ALGO, VACIO NO */}
+    {/* PARA FILTRO LUEGO DE BUSQUEDA */}
+    <select value={sortType} onChange={e => handleSort(e.target.value)}>
+      <option value="none">Sin filtro</option>
+      <option value="asc">Menor a mayor precio</option>
+      <option value="desc">Mayor a menor precio</option>
+    </select>
+    
     {searchValue.length > 0 && (
     <ul>
-      {filteredInfo.map((item) => (
+
+      {sortedInfo.map((item) => (
             <li key={item._id}>
               <p> Producto: {item.name} 
               <br/> Precio USD: {item.price}  
-              <br/> Unidades disponibles: {item.availableUnits} </p>  
+              <br/> Unidades disponibles: {item.availableUnits} </p>
             </li>
           ))}
     </ul>
     )}
     </div>
-  );
+  )
 }
 
 export { ShopSearch };

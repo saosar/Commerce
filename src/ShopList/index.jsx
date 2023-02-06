@@ -16,7 +16,7 @@ function ShopList() {
     <div>
       <label htmlFor="categories">Seleccione una categoría:</label>
       <select id="categories" onChange={handleCategoryChange}>
-        <option value="">Todas</option>
+        <option value="">None Selection</option>
         {uniqueCategories.map(category => (
           <option key={category} value={category}>
             {category}

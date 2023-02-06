@@ -19,6 +19,12 @@ function ShopSearchPrice() {
     setMaxPrice(event.target.value);
   };
 
+  ////BORRAR LA BARRA BUSQUEDA
+  const handleClear = () => {
+    setMaxPrice(Infinity);
+    setMinPrice(0);
+  };
+
   return (
     <div>
       <div>
@@ -39,6 +45,9 @@ function ShopSearchPrice() {
           />
         </label>
       </div>
+
+      <button onClick={handleClear}>Clear</button>   {/*BORRAR BARRA BUSQUEDA - VUELVE ESTADO INICIAL*/}
+
       <ul>
         {filteredInfo.map(item => (
           <li key={item._id}>
