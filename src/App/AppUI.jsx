@@ -6,11 +6,8 @@ import { Modal } from '../Modal';
 import { CreateShopButton } from '../CreateShopButton';
 import { ShopList } from '../ShopList';
 import { ShopForm } from '../ShopForm';
-<<<<<<< HEAD
 // import { ShopSearchApi } from '../ShopSearchApi';
-=======
 import { ShopSearchPrice } from '../ShopSearchPrice';
->>>>>>> experimento
 
 function AppUI() {
   const {
@@ -22,17 +19,9 @@ function AppUI() {
   return (
   
     <React.Fragment>
-           
-<<<<<<< HEAD
-      <ShopSearch> 
-      </ShopSearch> 
 
-      {/* <ShopSearchApi/>*/}
-=======
-      <ShopSearch/> 
+      <ShopSearch/>
       <ShopSearchPrice/> 
->>>>>>> experimento
-     
       
         {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
           
