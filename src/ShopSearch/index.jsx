@@ -35,9 +35,8 @@ function ShopSearch() {
       {filteredInfo.map((item) => (
             <li key={item._id}>
               <p> Producto: {item.name} 
-              <br/> Precio USD: {item.price} </p>  
-              {/* <p> Precio: {item.price} </p> 
-              <p> Unidades disponibles: {item.availableUnits} </p>  */}
+              <br/> Precio USD: {item.price}  
+              <br/> Unidades disponibles: {item.availableUnits} </p>  
             </li>
           ))}
     </ul>
