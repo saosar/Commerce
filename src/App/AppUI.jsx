@@ -6,7 +6,7 @@ import { Modal } from '../Modal';
 import { CreateShopButton } from '../CreateShopButton';
 import { ShopList } from '../ShopList';
 import { ShopForm } from '../ShopForm';
-import { ShopSearchApi } from '../ShopSearchApi';
+import { ShopSearchPrice } from '../ShopSearchPrice';
 
 function AppUI() {
   const {
@@ -19,12 +19,8 @@ function AppUI() {
   
     <React.Fragment>
            
-      <ShopSearch> 
-      </ShopSearch> 
-
-      <ShopSearchApi>
-        
-      </ShopSearchApi>
+      <ShopSearch/> 
+      <ShopSearchPrice/> 
      
       
         {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
