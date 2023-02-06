@@ -38,6 +38,7 @@ function ShopSearch() {
             </li>
           ))}
     </ul>
+
     </div>
 
   );
