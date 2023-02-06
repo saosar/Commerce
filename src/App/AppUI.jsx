@@ -21,12 +21,10 @@ function AppUI() {
     <React.Fragment>
 
       <ShopSearch/>
+      <ShopList /> 
       <ShopSearchPrice/> 
       
-        {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}
-          
-          {/* PROBABLE CAMBIO PARA INGRESO DE LA INFO DE LA API */}
-          <ShopList /> 
+        {/* RENDER PROPS QUE ENVIAN FUNCION DE LA SIGUIENTE MANERA */}      
 
           {!!openModal && (
             <Modal>
