@@ -88,10 +88,9 @@ function ShopSearch() {
       <option value="desc">Mayor a menor precio</option>
     </select>
     
-
-
+    
       {/* MUESTRA RESULTADOS AL ESCRIBIR Y DAR CLICK */}
-    { (showResults && searchValue.length > 0)  && (
+      { (showResults && searchValue.length > 0)  && (
       <div>
         {filteredInfo.length >0 ?(
           <ul>
@@ -128,7 +127,7 @@ function ShopSearch() {
               {/* <button onClick={addToCart}>Cart</button> */}
 
 
-              {/* <Product id={1} name="Product 1" price={5.99} /> DEBO GUARDARLO EN VARIABLE 'setCart' */}
+              {/* <Product id={1} name="Product 1" price={5.99} /> DEBO GUARDARLO EN VARIABLE 'setCart'*/}
           
             </li>
           ))}

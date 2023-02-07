@@ -1,5 +1,6 @@
 import React from 'react';
-import { getApiData } from '../GetData'; ////api
+import { getApiData  } from '../GetData'; ////api
+
 // import { ShopSearch } from '../ShopSearch';
 // import { CreateShopButton } from '../CreateShopButton';
 // import { useLocalStorage } from './useLocalStorage';
@@ -34,6 +35,16 @@ function ShopProvider(props) {
     data();
   }, []);
 
+
+  const [infoId, setInfoId] = React.useState([]);    //VIENE DE getApiId
+  React.useEffect(() => {      //MUESTRE EN PANTALLA LA INFODE LAS API (que configura en shopsearchapi)
+    const data = async () => {
+      const infoId = await getApiData();
+      setInfo(infoId);
+    };
+    data();
+  }, []);
+
   // const [data, setData] = React.useState([]); 
   // Retornamos nuestro proveedor con nuestro contexto en la etiqueta value, que recibirá a toda nuestra aplicación, por eso necesitamos la prop children
   return (
@@ -61,6 +72,9 @@ function ShopProvider(props) {
 
       addToCart,
       setAddToCart,
+
+      infoId,
+      setInfoId,
       
 
     }}>

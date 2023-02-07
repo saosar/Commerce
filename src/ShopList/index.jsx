@@ -25,6 +25,7 @@ function ShopList() {
       </select>
       
       {/* SOLO MUESTRO LA API SI ESCRIBEN ALGO, VACIO NO */}
+      {/* filtrar por categoria .filter para que solo se muestre 1 vez la categoria */}
       {selectedCategory.length > 0 && (
       <ul>
         {info

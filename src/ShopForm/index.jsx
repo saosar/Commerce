@@ -2,6 +2,8 @@ import React from 'react';
 import { ShopContext } from '../ShopContext';
 import './ShopForm.css';
 
+///
+
 function ShopForm() {
   // Creamos un estado para nuestro nuevo TODO
   const [newShopValue, setNewShopValue] = React.useState('');
@@ -31,16 +33,14 @@ function ShopForm() {
     setNewShopValue('')
   };
 
+  
+
   return (
     <form onSubmit={onSubmit}>
       <label>Realiza una nueva compra</label>
 
       {/* CAMBIAR POR EL PRODUCTO SELECCIONADO POR EL CLIENTE EN CARRITO */}
-      <textarea
-        value={newShopValue}
-        onChange={onChange}
-        placeholder="PRODUCTO A COMPRAR"
-      />
+  
 
 
       <div className="ShopForm-buttonContainer">

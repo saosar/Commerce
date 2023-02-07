@@ -12,7 +12,7 @@ import { ShopSearchPrice } from '../ShopSearchPrice';
 
 ///PARA EL CARRITO
 // import {Cart} from '../Cart';
-import {Product} from '../Product';
+// import {Product} from '../Product';
 
 
 function AppUI() {
@@ -26,8 +26,10 @@ function AppUI() {
   
     <React.Fragment>
 
+      <h1>Indatum commerce shopping cart</h1>
+
       {/* <Cart /> */}
-      <Product/>
+      
       {/* <Product id={1} name="Product 1" price={5.99} />   */}
       {/* ASI SE DEBE GUARDAR ENSEARCH */}
 
@@ -48,6 +50,9 @@ function AppUI() {
               <ShopForm/>
             </Modal>
           )}
+
+
+      {/* <Product/> */}
 
       
       {/* <Scroller></Scroller> */}
