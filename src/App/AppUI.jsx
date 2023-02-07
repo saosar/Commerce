@@ -20,7 +20,13 @@ function AppUI() {
   
     <React.Fragment>
 
+      {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
+      <CreateShopButton
+        setOpenModal={setOpenModal}
+      />
+
       <ShopSearch/>
+
       <ShopList /> 
       <ShopSearchPrice/> 
       
@@ -32,10 +38,7 @@ function AppUI() {
             </Modal>
           )}
 
-          {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
-      <CreateShopButton
-        setOpenModal={setOpenModal}
-        />
+      
       {/* <Scroller></Scroller> */}
     </React.Fragment>
     

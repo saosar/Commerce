@@ -11,7 +11,7 @@ function CreateShopButton(props) {
       className="CreateShopButton"
       onClick={onClickButton}
     >
-      Purchase!
+      Purchase! 🛒 
     </button>
   );
 }

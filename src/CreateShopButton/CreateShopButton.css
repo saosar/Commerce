@@ -1,5 +1,9 @@
 .CreateShopButton {
     background-color: #e2addb;   /* BOTON DE COMPRA*/
+    border: 2px solid #bf71d9;
+    border-radius: 10%;
+    padding: 0.5%;
+
 }
   
 /* .CreateShopButton:hover {

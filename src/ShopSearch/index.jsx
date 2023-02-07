@@ -3,8 +3,8 @@ import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 
 //PARA EL CARRITO 
-// import { ActionTypes } from '@mui/base';
-// import reducer from '../Cart/reducer'
+import { ActionTypes } from '@mui/base';
+import reducer from '../Cart/reducer'
 
 function ShopSearch() {
   const { info } = React.useContext(ShopContext);    ///API
@@ -49,18 +49,18 @@ function ShopSearch() {
 //////----------
 
   /// AÑADIR AL CARRITO
-  // const addToCart = () =>{
-  //   dispatch({
-  //     type: ActionTypes.add_to_cart,
-  //     item: {
-  //       id: '_id',
-  //       name: 'name',
-  //       category: 'category',
-  //       price: 'price',
-  //       availableUnits: 'availableUnits'
-  //     }
-  //   })
-  // };
+  const addToCart = () =>{
+    dispatch({
+      type: ActionTypes.add_to_cart,
+      item: {
+        id: '_id',
+        name: 'name',
+        category: 'category',
+        price: 'price',
+        availableUnits: 'availableUnits'
+      }
+    })
+  };
 /////////////////////-----------
 
 
@@ -121,7 +121,9 @@ function ShopSearch() {
               <p> Producto: {item.name} 
               <br/> Precio USD: {item.price}  
               <br/> Unidades disponibles: {item.availableUnits} </p>
-              {/* <button onClick={addToCart}>Cart</button> */}
+
+
+              <button onClick={addToCart}>Cart</button>
           
             </li>
           ))}
