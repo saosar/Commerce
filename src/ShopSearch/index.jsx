@@ -20,7 +20,7 @@ function ShopSearch() {
  
   ////////////solo al oprimir boton 
   const handleSubmit = () => {
-  setShowResults(true);
+    setShowResults(true);
   }
 
   const filteredInfo = info.filter(item => item.name.toLowerCase().includes(searchValue.toLowerCase().trim()));
@@ -28,7 +28,7 @@ function ShopSearch() {
   ////BORRAR LA BARRA BUSQUEDA
   const handleClear = () => {
     setSearchValue("");
-    setShowResults(false);   // se despresiona boton
+    setShowResults(false);   // se despresiona boton Clear
   };
   
 
@@ -89,15 +89,15 @@ function ShopSearch() {
 
 
       {/* MUESTRA RESULTADOS AL ESCRIBIR Y DAR CLICK */}
-    { showResults && searchValue.length > 0 && (
+    { (showResults && searchValue.length > 0)  && (
       <div>
         {filteredInfo.length >0 ?(
           <ul>
           {sortedInfo.map((item) => (
             <li key={item._id}>
-              <p> Producto: {item.name} 
+              {/* <p> Producto: {item.name} 
               <br/> Precio USD: {item.price}  
-              <br/> Unidades disponibles: {item.availableUnits} </p>
+              <br/> Unidades disponibles: {item.availableUnits} </p> */}
               {/* <button onClick={addToCart}>Cart</button> */}
           
             </li>
@@ -110,10 +110,11 @@ function ShopSearch() {
       </div>
     )}
 
-          {/* MUESTRA RESULTADOS AL DAR CLICK SIN ESCRIBIR */}
-    { showResults > 0 && (
+
+
+    { showResults && (
       <div>
-        {filteredInfo.length >0 ?(
+        
           <ul>
           {sortedInfo.map((item) => (
             <li key={item._id}>
@@ -125,13 +126,10 @@ function ShopSearch() {
             </li>
           ))}
           </ul>
-          
-        ) : (
-          <p>No se encontraron resultados</p>
-        )}
       </div>
     )}
 
+   
 
     </div>
   )
