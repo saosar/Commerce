@@ -1,7 +1,6 @@
 import React from 'react';
 import { ShopContext } from '../ShopContext';
 
-
     const Product = (props) => {
         const { cart, setCart } = React.useContext(ShopContext);
       
@@ -17,7 +16,6 @@ import { ShopContext } from '../ShopContext';
           </div>
         );
       };
-
 
 export { Product };
 

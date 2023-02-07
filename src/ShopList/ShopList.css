@@ -1,7 +1,4 @@
-ul {
-    margin: 0;
-    padding: 0 0 10px 0;
+ul { 
     list-style: none;
     color:rgb(70, 95, 177);  /*color letra */
-    
   }
