@@ -11,7 +11,7 @@ import { ShopSearchPrice } from '../ShopSearchPrice';
 
 
 ///PARA EL CARRITO
-import {Cart} from '../Cart';
+// import {Cart} from '../Cart';
 import {Product} from '../Product';
 
 
@@ -27,8 +27,9 @@ function AppUI() {
     <React.Fragment>
 
       {/* <Cart /> */}
-      {/* <Product/> */}
-      {/* <Product id={1} name="Product 1" price={5.99} />  ASI SE DEBE GUARDAR ENSEARCH*/}
+      <Product/>
+      {/* <Product id={1} name="Product 1" price={5.99} />   */}
+      {/* ASI SE DEBE GUARDAR ENSEARCH */}
 
       {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
       <CreateShopButton

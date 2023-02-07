@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
@@ -126,7 +128,7 @@ function ShopSearch() {
               {/* <button onClick={addToCart}>Cart</button> */}
 
 
-              {/* <Product id={1} name="Product 1" price={5.99} /> DEBO GUARDARLO EN VARIABLE 'setCart'*/}
+              {/* <Product id={1} name="Product 1" price={5.99} /> DEBO GUARDARLO EN VARIABLE 'setCart' */}
           
             </li>
           ))}

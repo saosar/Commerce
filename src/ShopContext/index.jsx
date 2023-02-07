@@ -18,7 +18,10 @@ function ShopProvider(props) {
   ///////////PARA EL CARRO
   const [cart, setCart] = React.useState([]);
   const [Product] = React.useState([]);
-  const [addToCart] = React.useState([]);
+
+
+  const [addToCart, setAddToCart] = React.useState([]);
+  
 
 
   ///ACTUALIZA EL ESTADO DE data que viene de getData para guardar la API y usar en shopsearchapi  ////api
@@ -55,7 +58,10 @@ function ShopProvider(props) {
       cart,
       setCart,
       Product,
+
       addToCart,
+      setAddToCart,
+      
 
     }}>
       {props.children}
