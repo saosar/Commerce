@@ -3,8 +3,8 @@ import './ShopSearch.css';
 import { ShopContext } from '../ShopContext';
 
 //PARA EL CARRITO 
-import { ActionTypes } from '@mui/base';
-import reducer from '../Cart/reducer'
+// import { ActionTypes } from '@mui/base';
+// import reducer from '../Cart/reducer'
 
 function ShopSearch() {
   const { info } = React.useContext(ShopContext);    ///API
@@ -48,21 +48,21 @@ function ShopSearch() {
 
 //////----------
 
-  /// AÑADIR AL CARRITO
-  const addToCart = () =>{
-    dispatch({
-      type: ActionTypes.add_to_cart,
-      item: {
-        id: '_id',
-        name: 'name',
-        category: 'category',
-        price: 'price',
-        availableUnits: 'availableUnits'
-      }
-    })
-  };
-/////////////////////-----------
-
+  // /// AÑADIR AL CARRITO
+  // const addToCart = () =>{
+  //   dispatch({
+  //     type: ActionTypes.add_to_cart,
+  //     item: {
+  //       id: '_id',
+  //       name: 'name',
+  //       category: 'category',
+  //       price: 'price',
+  //       availableUnits: 'availableUnits'
+  //     }
+  //   })
+  // };
+/////////////////////----------- LLENAR EL PRODUCTO VACIO Product.js
+     const { addToCart } = React.useContext(ShopContext);
 
   return (
     <div>
@@ -122,8 +122,11 @@ function ShopSearch() {
               <br/> Precio USD: {item.price}  
               <br/> Unidades disponibles: {item.availableUnits} </p>
 
+              <button onClick={() => addToCart(item)}>Cart</button>
+              {/* <button onClick={addToCart}>Cart</button> */}
 
-              <button onClick={addToCart}>Cart</button>
+
+              {/* <Product id={1} name="Product 1" price={5.99} /> DEBO GUARDARLO EN VARIABLE 'setCart'*/}
           
             </li>
           ))}
@@ -137,4 +140,4 @@ function ShopSearch() {
   )
 }
 
-export { ShopSearch };
+export { ShopSearch }

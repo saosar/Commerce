@@ -9,6 +9,12 @@ import { ShopForm } from '../ShopForm';
 // import { ShopSearchApi } from '../ShopSearchApi';
 import { ShopSearchPrice } from '../ShopSearchPrice';
 
+
+///PARA EL CARRITO
+import {Cart} from '../Cart';
+import {Product} from '../Product';
+
+
 function AppUI() {
   const {
 
@@ -19,6 +25,10 @@ function AppUI() {
   return (
   
     <React.Fragment>
+
+      {/* <Cart /> */}
+      {/* <Product/> */}
+      {/* <Product id={1} name="Product 1" price={5.99} />  ASI SE DEBE GUARDAR ENSEARCH*/}
 
       {/* PARA ABRIR EL MODAL SE CREA UN BOTONCITO */}
       <CreateShopButton

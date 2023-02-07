@@ -15,6 +15,11 @@ function ShopProvider(props) {
 
   const[openModal,setOpenModal] = React.useState(false);
 
+  ///////////PARA EL CARRO
+  const [cart, setCart] = React.useState([]);
+  const [Product] = React.useState([]);
+  const [addToCart] = React.useState([]);
+
 
   ///ACTUALIZA EL ESTADO DE data que viene de getData para guardar la API y usar en shopsearchapi  ////api
   const [info, setInfo] = React.useState([]);    //VIENE DE getApiData
@@ -44,6 +49,13 @@ function ShopProvider(props) {
       
       // data, 
       // setData,
+
+
+      ///PARA EL CARRO 
+      cart,
+      setCart,
+      Product,
+      addToCart,
 
     }}>
       {props.children}
